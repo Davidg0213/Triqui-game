@@ -1,150 +1,292 @@
-var ganador = 0;
-var cantidadJuegos = 0; //Control para reiniciar la variable ganador
+// var ganador = 0;
+// var cantidadJuegos = 0; //Control para reiniciar la variable ganador
 
-function validar(player1 , matrix , contador_selecciones){
+// function validar(player1 , matrix , contador_selecciones){
 
-    let simbolo; 
+//     let simbolo; 
 
-    if(cantidadJuegos === 1){
-        ganador = 0;
-        cantidadJuegos = 0;
-    }
+//     if(cantidadJuegos === 1){
+//         ganador = 0;
+//         cantidadJuegos = 0;
+//     }
 
-    if(player1){
-        simbolo = 'x';
-    }
-    else{
-        simbolo = 'o';
-    }
-//Primera fila 
-    if(simbolo === matrix[0][0] && simbolo === matrix[0][1] && simbolo === matrix[0][2]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    }
-//segunda fila
-    else if(simbolo === matrix[1][0] && simbolo === matrix[1][1] && simbolo === matrix[1][2]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    }
-//Tercera fila
-    else if(simbolo === matrix[2][0] && simbolo === matrix[2][1] && simbolo === matrix[2][2]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    }
-//Primera columna
-    else if(simbolo === matrix[0][0] && simbolo === matrix[1][0] && simbolo === matrix[2][0]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    }
+//     if(player1){
+//         simbolo = 'x';
+//     }
+//     else{
+//         simbolo = 'o';
+//     }
+// Primera fila 
+//     if(simbolo === matrix[0][0] && simbolo === matrix[0][1] && simbolo === matrix[0][2]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     }
+// segunda fila
+//     else if(simbolo === matrix[1][0] && simbolo === matrix[1][1] && simbolo === matrix[1][2]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     }
+// Tercera fila
+//     else if(simbolo === matrix[2][0] && simbolo === matrix[2][1] && simbolo === matrix[2][2]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     }
+// Primera columna
+//     else if(simbolo === matrix[0][0] && simbolo === matrix[1][0] && simbolo === matrix[2][0]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     }
 
-//Segunda columna
+// Segunda columna
 
-    else if(simbolo === matrix[0][1] && simbolo === matrix[1][1] && simbolo === matrix[2][1]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    }
+//     else if(simbolo === matrix[0][1] && simbolo === matrix[1][1] && simbolo === matrix[2][1]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     }
 
-//Tercera Columna
-    else if(simbolo === matrix[0][2] && simbolo === matrix[1][2] && simbolo === matrix[2][2]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    } 
-//Diagonal 1 
-    else if(simbolo === matrix[0][0] && simbolo === matrix[1][1] && simbolo === matrix[2][2]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
-    } 
+// Tercera Columna
+//     else if(simbolo === matrix[0][2] && simbolo === matrix[1][2] && simbolo === matrix[2][2]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     } 
+// Diagonal 1 
+//     else if(simbolo === matrix[0][0] && simbolo === matrix[1][1] && simbolo === matrix[2][2]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
+//     } 
 
-//Diagonal 2
+// Diagonal 2
 
-    else if(simbolo === matrix[0][2] && simbolo === matrix[1][1] && simbolo === matrix[2][0]){
-        if(simbolo==='x'){
-            ganador = 1;
-            cantidadJuegos +=1; 
-        }
-        else if(simbolo === 'o'){
-            ganador = 2;
-            cantidadJuegos +=1; 
-        }
-        else {
-            ganador = 0;
-        }
+//     else if(simbolo === matrix[0][2] && simbolo === matrix[1][1] && simbolo === matrix[2][0]){
+//         if(simbolo==='x'){
+//             ganador = 1;
+//             cantidadJuegos +=1; 
+//         }
+//         else if(simbolo === 'o'){
+//             ganador = 2;
+//             cantidadJuegos +=1; 
+//         }
+//         else {
+//             ganador = 0;
+//         }
 
     
-    } 
+//     } 
 
-    if(contador_selecciones === 9){
-        const nextButton = document.getElementById("nextButton");
-        nextButton.disabled = false;
-        nextButton.style.backgroundColor = "#f5ce22";
-        nextButton.style.cursor = "pointer";
-        ganador = 3; //Empate
+//     if(contador_selecciones === 9){
+//         const nextButton = document.getElementById("nextButton");
+//         nextButton.disabled = false;
+//         nextButton.style.backgroundColor = "#f5ce22";
+//         nextButton.style.cursor = "pointer";
+//         ganador = 3; //Empate
+//     }
+
+//     return ganador; 
+// }
+
+// export default validar; 
+
+//==================================================0
+
+class Validar {
+    constructor(player1 , matrix , contador_selecciones){
+        let simbolo; 
+        if(contador_selecciones === 1){
+            this.ganador = 0;
+            this.cantidadJuegos = 0;
+        }
+        if(player1){
+            simbolo = 'x';
+        }
+        else{
+            simbolo = 'o';
+        }
+        //Primera fila 
+        if(simbolo === matrix[0][0] && simbolo === matrix[0][1] && simbolo === matrix[0][2]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //segunda fila
+        else if(simbolo === matrix[1][0] && simbolo === matrix[1][1] && simbolo === matrix[1][2]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //Tercera fila
+        else if(simbolo === matrix[2][0] && simbolo === matrix[2][1] && simbolo === matrix[2][2]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1;
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //Primera columna
+        else if(simbolo === matrix[0][0] && simbolo === matrix[1][0] && simbolo === matrix[2][0]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //Segunda columna
+        else if(simbolo === matrix[0][1] && simbolo === matrix[1][1] && simbolo === matrix[2][1]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //Tercera Columna
+        else if(simbolo === matrix[0][2] && simbolo === matrix[1][2] && simbolo === matrix[2][2]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //Diagonal 1
+        else if(simbolo === matrix[0][0] && simbolo === matrix[1][1] && simbolo === matrix[2][2]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+        }
+        //Diagonal 2
+        else if(simbolo === matrix[0][2] && simbolo === matrix[1][1] && simbolo === matrix[2][0]){
+            if(simbolo==='x'){
+                this.ganador = 1;
+                this.cantidadJuegos +=1; 
+            }
+            else if(simbolo === 'o'){
+                this.ganador = 2;
+                this.cantidadJuegos +=1; 
+            }
+            else {
+                this.ganador = 0;
+            }
+
+    
+        }
+        if(contador_selecciones === 9){
+            const nextButton = document.getElementById("nextButton");
+            nextButton.disabled = false;
+            nextButton.style.backgroundColor = "#f5ce22";
+            nextButton.style.cursor = "pointer";
+            this.ganador = 3; //Empate
+        }
     }
-
-    return ganador; 
 }
 
-export default validar; 
+const validar = new Validar();
+export default validar;

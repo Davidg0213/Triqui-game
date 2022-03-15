@@ -60,7 +60,7 @@ function puntaje(){
 }
 
 sortearPartida.onclick = () => {
-    player1 = random(nuevoJuego); 
+    player1 = random();
 }
 
 comenzar.onclick = () => {
